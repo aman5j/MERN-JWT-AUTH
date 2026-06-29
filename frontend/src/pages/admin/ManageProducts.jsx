@@ -9,6 +9,8 @@ import ProductSearch from '../../components/product/ProductSearch'
 
 export default function ManageProducts() {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   // Modal Control tracking hooks
@@ -28,8 +30,12 @@ export default function ManageProducts() {
     try {
       const res = await getProducts();
       setProducts(res.data.products);
+      
     } catch (err) {
       error("Failed to load products");
+      setError(err.response?.data?.message || "Failed to fetch products details.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -50,6 +56,9 @@ export default function ManageProducts() {
       error("Delete operation failed");
     }
   };
+
+  if (loading) return <div className="admin-loading">Loading products data...</div>;
+  if (error) return <div className="admin-error-banner">{error}</div>;
 
   return (
     <div className="manage-products-wrapper">

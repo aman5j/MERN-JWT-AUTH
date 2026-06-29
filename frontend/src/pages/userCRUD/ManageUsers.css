@@ -1,0 +1,23 @@
+/* State Handlers (Loading, Error, Blank Data) */
+.admin-loading, 
+.admin-error-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.admin-loading {
+  color: #64748b;
+}
+
+.admin-error-banner {
+  color: #ef4444;
+  background-color: #fee2e2;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #fca5a5;
+}

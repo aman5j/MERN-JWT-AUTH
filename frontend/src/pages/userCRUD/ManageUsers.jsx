@@ -8,6 +8,9 @@ import "./ManageUsers.css"
 
 export default function ManageUsers() {
   const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const navigate = useNavigate();
 
   // Modal Control tracking hooks
@@ -25,6 +28,9 @@ export default function ManageUsers() {
       setUsers(res.data);
     } catch (err) {
       error("Failed to load users");
+      setError(err.response?.data?.message || "Failed to fetch users orders.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -45,6 +51,9 @@ export default function ManageUsers() {
       error("Delete operation failed");
     }
   };
+
+  if (loading) return <div className="admin-loading">Loading Users...</div>;
+  if (error) return <div className="admin-error-banner">{error}</div>;
 
   return (
     <div className="manage-products-wrapper">

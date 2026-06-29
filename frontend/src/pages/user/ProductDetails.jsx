@@ -3,6 +3,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Star, ShoppingCart, ArrowLeft, ShieldCheck, Truck } from "lucide-react";
 import { getProductById } from "../../api/productApi";
 import { useAuth } from '../../hooks/useAuth';
+
+// 1. IMPORT API_BASE_URL FROM YOUR AXIOS SETUP
+import { API_BASE_URL } from '../../api/axios';
+
 import './ProductDetails.css';
 
 export default function ProductDetails() {
@@ -15,6 +19,9 @@ export default function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const cartItem = cart.find((item) => item._id === id)
+
+  // 2. GET THE DYNAMIC ROOT SERVER URL (strips "/api" off the end)
+  const SERVER_ROOT_URL = API_BASE_URL.replace("/api", "");
 
 
   useEffect(() => {
@@ -79,7 +86,7 @@ export default function ProductDetails() {
         {/* Left Side: Images */}
         <div className="details-media-section">
           <div className="main-image-wrapper">
-            <img src={activeImage.startsWith("/uploads/images") ? `http://localhost:5000${activeImage}` : activeImage} alt={product.title} className="details-image" />
+            <img src={activeImage.startsWith("/uploads/images") ? `${SERVER_ROOT_URL}${activeImage}` : activeImage} alt={product.title} className="details-image" />
           </div>
           {/* Thumbnails list if there are multiple images */}
           {product.images && product.images.length > 1 && (
@@ -90,7 +97,7 @@ export default function ProductDetails() {
                   // src={img} 
   
                   src={img.startsWith("/uploads/images") ? 
-                    `http://localhost:5000${img}` :
+                    `${SERVER_ROOT_URL}${img}` :
                      img}
                  
 

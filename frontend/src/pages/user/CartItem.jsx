@@ -1,13 +1,18 @@
 import React from 'react';
 import { Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+// 1. IMPORT API_BASE_URL FROM YOUR AXIOS SETUP
+import { API_BASE_URL } from '../../api/axios';
 
 export default function CartItem({ item, onQuantityChange, onRemove }) {
   const navigate = useNavigate();
 
+  // 2. GET THE DYNAMIC ROOT SERVER URL (strips "/api" off the end)
+  const SERVER_ROOT_URL = API_BASE_URL.replace("/api", "");
+
   const imagePathFigure = 
   item.images[0].startsWith("/uploads/images") ? 
-  `http://localhost:5000${item.images[0]}` :
+  `${SERVER_ROOT_URL}${item.images[0]}` :
   item.images[0]
 
   return (

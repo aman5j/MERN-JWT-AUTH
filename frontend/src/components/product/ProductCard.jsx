@@ -3,16 +3,20 @@ import { ShoppingCart, Star } from "lucide-react";
 import { Link } from 'react-router-dom';
 import "./ProductCard.css";
 import { useAuth } from '../../hooks/useAuth';
-import API from '../../api/axios';
+import API, { API_BASE_URL } from '../../api/axios';
 
 export default function ProductCard({ product }) {
   const { cart, addToCart, removeToCart } = useAuth();
 
   const cartItem = cart.find((item) => item._id === product._id);
+  // console.log(API.baseURL);
+
+  // 2. Get the root server address by removing "/api" from the end
+  const SERVER_ROOT_URL = API_BASE_URL.replace("/api", "");
 
   const imagePathFigure = 
   product.images[0].startsWith("/uploads/images") ? 
-  `${API.baseURL}${product.images[0]}` :
+  `${SERVER_ROOT_URL}${product.images[0]}` :
   product.images[0]
   // const imagePathFigure = 
   // product.images[0].startsWith("/uploads/images") ? 
