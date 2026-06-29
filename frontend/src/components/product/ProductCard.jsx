@@ -3,6 +3,7 @@ import { ShoppingCart, Star } from "lucide-react";
 import { Link } from 'react-router-dom';
 import "./ProductCard.css";
 import { useAuth } from '../../hooks/useAuth';
+import API from '../../api/axios';
 
 export default function ProductCard({ product }) {
   const { cart, addToCart, removeToCart } = useAuth();
@@ -11,8 +12,12 @@ export default function ProductCard({ product }) {
 
   const imagePathFigure = 
   product.images[0].startsWith("/uploads/images") ? 
-  `http://localhost:5000${product.images[0]}` :
+  `${API.baseURL}${product.images[0]}` :
   product.images[0]
+  // const imagePathFigure = 
+  // product.images[0].startsWith("/uploads/images") ? 
+  // `http://localhost:5000${product.images[0]}` :
+  // product.images[0]
 
 
   return (
