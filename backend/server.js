@@ -1,5 +1,5 @@
 const express = require("express");
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 const path = require("path");
 const connectDB = require("./config/db");
 const cors = require('cors');
@@ -50,10 +50,10 @@ app.listen(port, ()=> {
 // ... your routes, database connection, and middleware logic above ...
 
 // ONLY listen to a port if running locally (not on Netlify)
-if (process.env.NODE_ENV !== 'production') {
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+// if (process.env.NODE_ENV !== 'production') {
+//     const PORT = process.env.PORT || 5000;
+//     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// }
 
 // CRITICAL: Export the serverless handler instead of running app.listen()
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
