@@ -1,0 +1,35 @@
+.custom-button {
+  /* bg-blue-600 */
+  background-color: #2563eb;
+  
+  /* text-white */
+  color: #ffffff;
+  
+  /* px-5 py-2 (5 * 0.25rem = 1.25rem, 2 * 0.25rem = 0.5rem) */
+  padding: 0.5rem 1.25rem;
+  
+  /* rounded-lg (8px) */
+  border-radius: 0.5rem;
+  
+  /* transition */
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms; /* Standard Tailwind transition duration */
+  
+  /* Cleaning up default browser button borders and font behavior */
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* hover:bg-blue-700 */
+.custom-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Handles styling when the button is disabled */
+.custom-button:disabled {
+  background-color: #9ca3af; /* fallback gray color */
+  cursor: not-allowed;
+  opacity: 0.7;
+}

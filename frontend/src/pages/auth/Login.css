@@ -1,0 +1,41 @@
+.login-title {
+  /* text-3xl */
+  font-size: 1.875rem;
+  
+  /* font-bold */
+  font-weight: 700;
+  
+  /* text-center */
+  text-align: center;
+  
+  /* mb-6 (6 * 0.25rem = 1.5rem) */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #111827; /* gray-900 heading color */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* mt-5 text-center */
+.login-footer {
+  margin-top: 1.25rem; /* 5 * 0.25rem */
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* text-blue-600 ml-2 */
+.register-link {
+  color: #2563eb;
+  margin-left: 0.5rem; /* 2 * 0.25rem */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.register-link:hover {
+  color: #1d4ed8; /* text-blue-700 */
+}

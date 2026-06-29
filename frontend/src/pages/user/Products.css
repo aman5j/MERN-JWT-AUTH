@@ -1,0 +1,39 @@
+/* Container padding (p-8) */
+.products-page-container {
+  padding: 2rem; /* 8 * 0.25rem = 32px */
+}
+
+/* Page Heading layout (text-3xl font-bold mb-6) */
+.products-page-title {
+  font-size: 1.875rem; /* text-3xl equivalent (~30px) */
+  font-weight: 700; /* font-bold equivalent */
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* mb-6 equivalent (24px) */
+  color: #111827; /* gray-900 tint */
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Adjust as needed */
+  font-family: sans-serif;
+  gap: 15px;
+}
+
+/* The actual spinning wheel */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Light grey background track */
+  border-top: 5px solid #3498db; /* Blue spinning color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* The spinning animation logic */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(3600deg); }
+}

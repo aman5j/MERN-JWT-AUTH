@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #ffffff;
+  /* shadow-md equivalent */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+  /* px-8 py-4 equivalent */
+  padding: 1rem 2rem; 
+  /* flex justify-between items-center */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Added to keep text and icons perfectly centered vertically */
+}
+
+.navbar-logo {
+  /* text-2xl font-bold */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-links {
+  /* flex gap-6 */
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333333; /* Default dark text color */
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #000000; /* Subtle hover effect */
+}
+
+.icon-link {
+  /* Helps align lucide icons nicely */
+  display: flex;
+  align-items: center;
+}

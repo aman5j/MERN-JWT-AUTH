@@ -1,0 +1,41 @@
+.manage-products-wrapper {
+  /* Fits nicely into your AdminLayout parent grid structure */
+}
+
+/* Header row layout panel (flex justify-between mb-6) */
+.manage-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligns title text base vertically with the button block */
+  margin-bottom: 1.5rem; /* mb-6 equivalent (24px) */
+}
+
+/* Page Title Heading styling (text-3xl font-bold) */
+.manage-products-title {
+  font-size: 1.875rem; /* text-3xl equivalent */
+  font-weight: 700;    /* font-bold */
+  margin: 0;
+  color: #111827;      /* text-gray-900 typography palette shade */
+}
+
+/* Top Right Action Button Layout (bg-blue-600 text-white px-5 py-2 rounded) */
+.add-product-btn {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;            /* text-white */
+  padding: 0.5rem 1.25rem;   /* py-2 px-5 (8px top/bottom, 20px sides) */
+  border-radius: 0.25rem;   /* rounded (4px) */
+  
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #1d4ed8; /* Darkens up cleanly to a hover variant blueprint */
+}
+
+.add-product-btn:active {
+  transform: scale(0.98); /* Added micro interaction tactile feedback hint */
+}

@@ -1,0 +1,146 @@
+/* ==========================================================================
+   1. Form Container
+   ========================================================================== */
+.add-product-form {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-header {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: left;
+}
+
+/* ==========================================================================
+   2. Layout Rows (Side-by-Side Grid Layouts)
+   ========================================================================== */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-field {
+  flex: 1;
+}
+
+/* ==========================================================================
+   3. Input Fields Base Styling (Text, Number, Textarea)
+   ========================================================================== */
+.form-field {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  padding: 0.8rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #f9fafb;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.form-field:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.textarea-field {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   4. File Upload (Image Picker Component) Settings
+   ========================================================================== */
+.file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  text-align: left;
+}
+
+.file-input-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.file-field {
+  padding: 0.6rem;
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+
+/* File button modifier customization */
+.file-field::file-selector-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.file-field::file-selector-button:hover {
+  background-color: #1d4ed8;
+}
+
+.file-count-preview {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.825rem;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   5. Submit Action Button
+   ========================================================================== */
+.submit-product-btn {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.375rem;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  margin-top: 0.5rem;
+}
+
+.submit-product-btn:hover {
+  background-color: #15803d;
+}
+
+.submit-product-btn:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   6. Responsive Viewport Constraints
+   ========================================================================== */
+@media (max-width: 600px) {
+  .add-product-form {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}

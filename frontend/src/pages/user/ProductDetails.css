@@ -1,0 +1,286 @@
+.details-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #495057;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #000;
+}
+
+/* Two-column layout layout grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 850px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Media Section Styling */
+.details-media-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-image-wrapper {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  aspect-ratio: 1 / 1;
+}
+
+.details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumbnails-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: #f8f9fa;
+}
+
+.thumbnail.active {
+  border-color: #0d6efd;
+}
+
+/* Right Column Content Information styling */
+.details-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-brand {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6c757d;
+  letter-spacing: 1px;
+}
+
+.details-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 6px 0 2px 0;
+  line-height: 1.25;
+}
+
+.info-category {
+  font-size: 0.95rem;
+  color: #0d6efd;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.info-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.info-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #e9ecef;
+}
+
+.info-divider {
+  color: #dee2e6;
+}
+
+.info-stock {
+  font-weight: 500;
+}
+
+.info-stock.in-stock {
+  color: #198754;
+}
+
+.info-stock.out-of-stock {
+  color: #dc3545;
+}
+
+.details-divider-line {
+  border: 0;
+  border-top: 1px solid #dee2e6;
+  margin: 20px 0;
+}
+
+.price-container {
+  margin-bottom: 16px;
+}
+
+.details-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+}
+
+.tax-inclusive {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 2px 0 0 0;
+}
+
+.details-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #495057;
+  margin: 0;
+}
+
+/* Purchase Actions Styling */
+.purchase-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 46px;
+}
+
+.quantity-selector button {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 100%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.quantity-selector button:hover {
+  background-color: #f1f3f5;
+}
+
+.quantity-selector span {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0 32px;
+  height: 46px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-grow: 1;
+  max-width: 280px;
+  transition: background-color 0.15s;
+}
+
+.details-btn:hover {
+  background-color: #212529;
+}
+
+/* Trust Badges Styling */
+.trust-badges {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.badge-item svg {
+  color: #6c757d;
+}
+
+/* Loading States */
+.details-loading, .details-error {
+  text-align: center;
+  margin-top: 80px;
+  font-family: sans-serif;
+  color: #6c757d;
+}
+
+/* Base styles come from your existing .details-btn */
+
+/* Specific styles for the Remove state */
+.details-btn.remove-btn {
+  background-color: #dc3545; /* Crimson/Red color */
+  color: #ffffff;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+/* Hover state for Remove Button */
+.details-btn.remove-btn:hover {
+  background-color: #bb2d3b; /* Slightly darker red on hover */
+}
+
+/* Active click state for Remove Button */
+.details-btn.remove-btn:active {
+  background-color: #a52834;
+  transform: scale(0.98); /* Subtle press-in effect */
+}

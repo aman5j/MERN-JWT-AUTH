@@ -1,0 +1,100 @@
+/* Container wrap */
+.input-group {
+  /* mb-4 (4 * 0.25rem = 1rem) */
+  margin-bottom: 1rem; 
+}
+
+/* NEW: Context anchor for the absolute positioned button */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Label styling */
+.input-label {
+  /* block */
+  display: block;
+  
+  /* mb-2 (2 * 0.25rem = 0.5rem) */
+  margin-bottom: 0.5rem;
+  
+  /* font-medium */
+  font-weight: 500;
+
+  text-align: left;
+}
+
+/* Field input styling */
+.form-input {
+  /* w-full */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
+  
+  /* border */
+  border: 1px solid #e5e7eb; /* Default light gray border */
+  
+  /* rounded-lg (8px) */
+  border-radius: 0.5rem;
+  
+  /* px-4 py-3 (4 * 0.25rem = 1rem, 3 * 0.25rem = 0.75rem) */
+  padding: 0.75rem 1rem;
+  
+  font-size: 1rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* focus:outline-none & focus:ring-2 focus:ring-blue-500 */
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6; /* Focus border color turns blue */
+  /* Tailwind ring simulation */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); 
+}
+
+/* Error helper configurations */
+.input-error-text {
+  /* text-red-500 */
+  color: #ef4444;
+  
+  /* text-sm */
+  font-size: 0.875rem;
+  
+  /* mt-1 (1 * 0.25rem = 0.25rem) */
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Optional helper to tweak border colors when error occurs */
+.input-error-border {
+  border-color: #ef4444;
+}
+
+/* Password Toggle Button styling (Converted from Tailwind) */
+.password-toggle-btn {
+  /* absolute right-3 top-1/2 -translate-y-1/2 */
+  position: absolute;
+  right: 0.75rem; /* 3 * 0.25rem */
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* flex items-center */
+  display: flex;
+  align-items: center;
+  
+  /* text-gray-400 */
+  color: #9ca3af; 
+  
+  /* Reset button defaults */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+/* hover:text-gray-600 */
+.password-toggle-btn:hover {
+  color: #4b5563;
+}

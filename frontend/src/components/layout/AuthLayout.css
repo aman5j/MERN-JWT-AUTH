@@ -1,0 +1,32 @@
+.auth-container {
+  /* min-h-screen */
+  min-height: 100vh;
+  
+  /* flex items-center justify-center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* bg-gray-100 */
+  background-color: #f3f4f6; 
+}
+
+.auth-card {
+  /* bg-white */
+  background-color: #ffffff;
+  
+  /* shadow-xl equivalent */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* rounded-xl (12px) */
+  border-radius: 0.75rem;
+  
+  /* p-8 (8 * 0.25rem = 2rem) */
+  padding: 2rem;
+  
+  /* w-full */
+  width: 100%;
+  
+  /* max-w-md (448px) */
+  max-width: 28rem; 
+}

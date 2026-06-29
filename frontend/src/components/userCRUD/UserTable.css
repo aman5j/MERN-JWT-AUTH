@@ -1,0 +1,84 @@
+/* Wrapper to prevent table layout blowouts on small screens */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0.25rem; /* rounded (4px) */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); /* Optional layout lift */
+}
+
+/* Core Table Element (w-full bg-white rounded) */
+.product-admin-table {
+  width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse; /* Merges adjacent cell borders cleanly */
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Header Cells styling */
+.product-admin-table thead tr {
+  background-color: #f9fafb; /* text-gray-50 subtle structure divider background */
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.product-admin-table th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #374151; /* text-gray-700 */
+}
+
+/* Body Row & Cell styling */
+.product-admin-table tbody tr {
+  border-bottom: 1px solid #f3f4f6; /* Subtle horizontal layout row dividers */
+  transition: background-color 0.15s ease;
+}
+
+/* Hover row accent highlight */
+.product-admin-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.product-admin-table td {
+  padding: 0.75rem 1rem;
+  color: #4b5563; /* text-gray-600 */
+  vertical-align: middle;
+}
+
+/* Delete Action Button (bg-red-500 text-white px-3 py-1 rounded) */
+.delete-btn {
+  background-color: #ef4444; /* bg-red-500 */
+  color: #ffffff;            /* text-white */
+  padding: 0.25rem 0.75rem;  /* py-1 px-3 */
+  border-radius: 0.25rem;   /* rounded (4px) */
+  
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626; /* Darker red variant matching hover:bg-red-600 */
+}
+
+.table-actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-action-btn {
+  background-color: #f59e0b;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.edit-action-btn:hover {
+  background-color: #d97706;
+}

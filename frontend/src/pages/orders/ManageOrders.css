@@ -1,0 +1,225 @@
+/* ManageOrders.css */
+
+.manage-orders-container {
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header and Search Layout */
+.admin-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-header-row h2 {
+  font-size: 1.75rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 700;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: #94a3b8;
+}
+
+.search-wrapper input {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  width: 350px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #334155;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.search-wrapper input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive Table container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+}
+
+/* Table Architecture */
+.admin-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.admin-orders-table th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.admin-orders-table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: top;
+}
+
+.admin-orders-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Custom Component Sub-Cells */
+.date-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.customer-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.customer-info-cell strong {
+  color: #0f172a;
+}
+
+.customer-info-cell .subtext {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Item Summary Tags */
+.ordered-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.product-summary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #bfdbfe;
+  width: max-content;
+}
+
+.product-summary-badge strong {
+  color: #1d4ed8;
+}
+
+/* Data Utilities */
+.amount-text {
+  color: #0f172a;
+  font-size: 1.05rem;
+}
+
+.mono-text {
+  font-family: monospace;
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* Status Pill Variations */
+.status-pill {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status-pill.completed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-pill.pending {
+  background-color: #fef9c3;
+  color: #a16207;
+}
+
+.status-pill.failed {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* State Handlers (Loading, Error, Blank Data) */
+.admin-loading, 
+.admin-error-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.admin-loading {
+  color: #64748b;
+}
+
+.admin-error-banner {
+  color: #ef4444;
+  background-color: #fee2e2;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #fca5a5;
+}
+
+.no-records {
+  text-align: center;
+  color: #94a3b8;
+  padding: 3rem !important;
+  font-style: italic;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .admin-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-wrapper input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+/* Container layout (flex justify-center) */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centering vertically as well for better presentation */
+  padding: 2rem;       /* Optional: provides breathing room while content loads */
+}
+
+/* Spinner or plain text layout styles */
+.loader-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #4b5563; /* Subtle text-gray-600 appearance */
+}

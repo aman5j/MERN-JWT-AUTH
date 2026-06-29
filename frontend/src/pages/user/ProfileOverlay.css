@@ -1,0 +1,77 @@
+/* Dark tint backdrop overlay */
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it stays above everything */
+  backdrop-filter: blur(2px); /* Modern blur effect */
+}
+
+/* Modal Content Card */
+.overlay-card {
+  position: relative;
+  background-color: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Top-right absolute close button */
+.overlay-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+.overlay-close-btn:hover {
+  color: #000;
+}
+
+.overlay-details p {
+  margin: 15px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.error-text {
+  color: #dc3545;
+}
+
+/* Smooth zoom/fade entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

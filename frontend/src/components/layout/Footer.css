@@ -1,0 +1,18 @@
+.site-footer {
+  /* bg-black equivalent */
+  background-color: #000000; 
+  
+  /* text-white equivalent */
+  color: #ffffff; 
+  
+  /* p-6 equivalent (6 * 0.25rem = 1.5rem) */
+  padding: 1.5rem; 
+  
+  /* text-center equivalent */
+  text-align: center; 
+}
+
+.site-footer p {
+  /* Clears default paragraph margins to prevent unwanted spacing */
+  margin: 0; 
+}

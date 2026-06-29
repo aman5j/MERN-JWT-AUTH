@@ -1,0 +1,102 @@
+/* Sidebar column styling (w-64 bg-black text-white p-5) */
+.admin-sidebar {
+  width: 16rem; /* w-64 equivalent (256px) */
+  background-color: #000000; /* bg-black */
+  color: #ffffff; /* text-white */
+  padding: 1.25rem; /* p-5 equivalent (20px) */
+  box-sizing: border-box;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+/* Sidebar Title Header (text-2xl font-bold mb-8) */
+.sidebar-title {
+  font-size: 1.5rem; /* text-2xl equivalent */
+  font-weight: 700; /* font-bold */
+  margin-top: 0;
+  margin-bottom: 2rem; /* mb-8 equivalent (32px) */
+  color: #9ca3af;
+}
+
+/* Nav container (space-y-4 structural simulation) */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 equivalent (16px vertical gap between children) */
+}
+
+/* Custom individual links */
+.sidebar-link {
+  display: block;
+  color: #9ca3af; /* text-gray-400 for structural distinction */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+/* Link interactive states */
+.sidebar-link:hover {
+  color: #ffffff; /* text-white on hover */
+  padding-left: 0.25rem; /* Subtle animation hint on focus hover */
+}
+
+/*  New CSS Implement */
+
+/* Sidebar Layout adjustments to handle the bottom footer */
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  background-color: #1a1a2e; /* Example dark theme */
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Admin Profile Styling */
+.admin-profile {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2e2e48;
+}
+
+.admin-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.admin-email {
+  font-size: 0.8rem;
+  color: #9a9ab6;
+  margin: 4px 0 0 0;
+}
+
+/* Navigation flex growth so footer stays down */
+.sidebar-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc3750;
+}

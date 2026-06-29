@@ -1,0 +1,38 @@
+.register-title {
+  /* text-3xl */
+  font-size: 1.875rem;
+  
+  /* font-bold */
+  font-weight: 700;
+  
+  /* text-center */
+  text-align: center;
+  
+  /* mb-6 (6 * 0.25rem = 1.5rem) */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #111827; /* gray-900 heading tint */
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer link segment style matching your Welcome Back page layout */
+.register-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #4b5563; /* text-gray-600 */
+}
+
+.login-link {
+  color: #2563eb; /* text-blue-600 */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.login-link:hover {
+  color: #1d4ed8; /* text-blue-700 */
+}
