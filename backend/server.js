@@ -15,12 +15,12 @@ connectDB();
 
 app.use(express.json());
 // 2. Enable CORS for your React frontend
-app.use(cors({
-  origin: 'http://localhost:5173', // Allow only your frontend
-  credentials: true                // Allow cookies/auth headers if needed
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173', // Allow only your frontend
+//   credentials: true                // Allow cookies/auth headers if needed
+// }));
 
-// app.use(cors());
+app.use(cors());
 
 
 const authRoutes = require("./routes/authRoutes");
