@@ -29,7 +29,7 @@ export default function AdminSidebar() {
   return (
     <aside className="admin-sidebar">
         <div className="sidebar-header">
-        <h1 className="sidebar-title">
+        <h1 className="sidebar-title-admin">
             Admin Panel
         </h1>
         

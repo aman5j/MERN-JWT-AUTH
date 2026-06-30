@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const API_BASE_URL = "https://mern-jwt-auth-zjbj.onrender.com/api";
+// export const API_BASE_URL = "https://mern-jwt-auth-zjbj.onrender.com/api";
+export const API_BASE_URL = "http://localhost:5000/api";
 
 const API = axios.create({
     // baseURL: "http://localhost:5000/api"

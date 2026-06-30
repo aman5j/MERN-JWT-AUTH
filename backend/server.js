@@ -28,12 +28,18 @@ const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const productRoutes = require("./routes/productRoute");
 const orderRoutes = require("./routes/orderRoutes");
+const bannerRoutes = require("./routes/bannerRoutes");
+const brandRoutes = require("./routes/brandRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
 
 app.use("/api/auth/", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api", orderRoutes);
+app.use("/api/banners", bannerRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/brands", brandRoutes);
 
 // Static folder middleware mapping
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));

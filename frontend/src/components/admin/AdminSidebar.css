@@ -11,7 +11,7 @@
 }
 
 /* Sidebar Title Header (text-2xl font-bold mb-8) */
-.sidebar-title {
+.sidebar-title-admin {
   font-size: 1.5rem; /* text-2xl equivalent */
   font-weight: 700; /* font-bold */
   margin-top: 0;

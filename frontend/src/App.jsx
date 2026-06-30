@@ -136,6 +136,7 @@ import Profile from './pages/user/Profile'
 import ManageUsers from './pages/userCRUD/ManageUsers'
 import EditUser from './pages/userCRUD/EditUser'
 import ManageOrders from './pages/orders/ManageOrders'
+import ProductsPage from './pages/mainproductpage/ProductsPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -161,6 +162,7 @@ function App() {
           )
         },
         { path: "products", element: <Products /> },
+        { path: "productspage", element: <ProductsPage /> },
         { path: "products/:id", element: <ProductDetails /> },
         { path: "cart", element: <CartPage /> }
       ]

@@ -1,0 +1,26 @@
+.store-page-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+}
+.main-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+@media (min-width: 768px) {
+  .main-content-wrapper {
+    padding: 2rem 2rem;
+  }
+}
+.layout-split {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .layout-split {
+    flex-direction: row;
+  }
+}
