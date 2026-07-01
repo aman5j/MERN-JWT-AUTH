@@ -91,7 +91,8 @@ export default function ProductsPage() {
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
     const matchesBrand = selectedBrand === "All Brands" || product.brand === selectedBrand;
-    return matchesCategory && matchesBrand;
+    const matchesTitle = product.title.toLowerCase().includes(search.toLowerCase());
+    return matchesCategory && matchesBrand && matchesTitle;
   });
 
   const handleClearFilters = () => {
@@ -128,6 +129,8 @@ export default function ProductsPage() {
             // onClearFilters={handleClearFilters}
             onClearFilters={() => { setSelectedCategory("All"); setSelectedBrand("All Brands"); }}
             loading={loading}
+            search={search}
+            setSearch={setSearch}
           />
         </div>
       </div>

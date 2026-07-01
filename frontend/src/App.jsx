@@ -129,14 +129,39 @@ import AdminLogin from './pages/admin/AdminLogin' // New separate admin page
 import AdminRoute from './routes/AdminRoute'      // Updated separate route shield
 import AdminLayout from './components/layout/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
+
+
+import Profile from './pages/user/Profile'
+
+import ManageOrders from './pages/orders/ManageOrders'
+
+import ProductsPage from './pages/mainproductpage/ProductsPage'
+
+// Admin User CRUD Components
+import ManageUsers from './pages/userCRUD/ManageUsers'
+import EditUser from './pages/userCRUD/EditUser'
+
+
+// Admin Product CRUD Components
 import ManageProducts from './pages/admin/ManageProducts'
 import AddProduct from './pages/admin/AddProduct'
 import EditProduct from './pages/admin/EditProduct'
-import Profile from './pages/user/Profile'
-import ManageUsers from './pages/userCRUD/ManageUsers'
-import EditUser from './pages/userCRUD/EditUser'
-import ManageOrders from './pages/orders/ManageOrders'
-import ProductsPage from './pages/mainproductpage/ProductsPage'
+
+
+// Admin Banner CRUD Components
+import ManageBanners from './pages/admin/banners/ManageBanners'
+import AddBanner from './pages/admin/banners/AddBanner'
+import EditBanner from './pages/admin/banners/EditBanner'
+
+// Admin Category CRUD Components
+import ManageCategories from './pages/admin/categories/ManageCategories'
+import AddCategory from './pages/admin/categories/AddCategory'
+import EditCategory from './pages/admin/categories/EditCategory'
+
+// Admin Brand CRUD Components
+import ManageBrands from './pages/admin/brands/ManageBrands'
+import AddBrand from './pages/admin/brands/AddBrand'
+import EditBrand from './pages/admin/brands/EditBrand'
 
 function App() {
   const router = createBrowserRouter([
@@ -193,6 +218,7 @@ function App() {
           path: "products/edit/:id", // Resolves to: /admin/products/edit/:id
           element: <EditProduct />
         },
+        // -- Users CRUD ---
         {
           path: "users",   // Resolves to: /admin/users
           element: <ManageUsers/>
@@ -201,9 +227,49 @@ function App() {
           path: "users/edit/:id", // Resolves to: /admin/users/edit/:id
           element: <EditUser />
         },
+        // --- Orders Management ---
         {
           path: "orders",
           element: <ManageOrders/>
+        },
+        //--- Banners CRUD ---
+        {
+          path: "banners", //// Resolves to: /admin/banners
+          element: <ManageBanners/>
+        },
+        {
+          path: "banners/add",
+          element: <AddBanner/>
+        },
+        {
+          path: "banners/edit/:id",
+          element: <EditBanner/>
+        },
+        // --- Categories CRUD ---
+        {
+          path: "categories",
+          element: <ManageCategories/>
+        },
+        {
+          path: "categories/add",
+          element: <AddCategory/>
+        },
+        {
+          path: "categories/edit/:id",
+          element: <EditCategory/>
+        },
+        // --- Brands CRUD ---
+        {
+          path: "brands",
+          element: <ManageBrands/>
+        },
+        {
+          path: "brands/add",
+          element: <AddBrand/>
+        },
+        {
+          path: "brands/edit/:id",
+          element: <EditBrand/>
         }
       ]
     }

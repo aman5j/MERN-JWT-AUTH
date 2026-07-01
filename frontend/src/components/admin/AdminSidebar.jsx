@@ -54,6 +54,15 @@ export default function AdminSidebar() {
             <Link to="/admin/users" className="sidebar-link">
                 Users
             </Link>
+            <Link to="/admin/categories" className="sidebar-link">
+                Categories
+            </Link>
+            <Link to="/admin/brands" className="sidebar-link">
+                Brands
+            </Link>
+            <Link to="/admin/banners" className="sidebar-link">
+                Banners
+            </Link>
         </nav>
 
         {/* Logout Button Section */}

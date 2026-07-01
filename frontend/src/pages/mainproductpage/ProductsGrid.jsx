@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCartItemComponent from './ProductCartItemComponent';
 import './ProductsGrid.css';
 
-export default function ProductsGrid({ filteredProducts, selectedCategory, selectedBrand, onClearFilters, loading }) {
+export default function ProductsGrid({ filteredProducts, selectedCategory, selectedBrand, onClearFilters, loading,search, setSearch }) {
 
   if(loading) {
     return <h2>Loading...</h2>
@@ -14,6 +14,18 @@ export default function ProductsGrid({ filteredProducts, selectedCategory, selec
         <p className="results-count">
           Showing <span className="count-highlight">{filteredProducts.length}</span> products
         </p>
+        {/* create a searchbar here  */}
+        {/* Searchbar implementation */}
+        <div className="search-bar-container">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={search}
+            onChange={(e)=> setSearch(e.target.value)}
+            className="search-input"
+          />
+        </div>
+
         {(selectedCategory !== "All" || selectedBrand !== "All Brands") && (
           <button onClick={onClearFilters} className="clear-filters-btn">
             Clear Filters

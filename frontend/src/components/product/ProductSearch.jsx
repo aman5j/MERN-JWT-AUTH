@@ -6,7 +6,7 @@ export default function ProductSearch({search, setSearch}) {
     <input
         value={search}
         onChange={(e)=> setSearch(e.target.value)}
-        placeholder='Search products...'
+        placeholder='Search...'
         className='search-input'
     />
   )
