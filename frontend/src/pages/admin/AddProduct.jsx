@@ -1,6 +1,9 @@
 import React, { useEffect, useState} from 'react'
 import { createProducts } from '../../api/productApi'
 import { success, error } from '../../utils/toast'
+import { getAllCategories } from '../../api/categoryApi'
+import { getAllBrands } from '../../api/brandApi'
+
 import "./AddProduct.css"
 
 
@@ -16,8 +19,29 @@ export default function AddProduct() {
     })
 
 
+    // State arrays to house the database records
+    const [categories, setCategories] = useState([]);
+    const [brands, setBrands] = useState([]);
+
     // Separate state to handle selected files
     const [selectedImages, setSelectedImages] = useState([]);
+
+    // Fetch drop-down collections from the database on component load
+    useEffect(() => {
+        const fetchDropdownData = async () => {
+            try {
+                const categoriesResponse = await getAllCategories();    
+                const brandsResponse = await getAllBrands();
+                setCategories(categoriesResponse.data.categories || categoriesResponse.data);
+                setBrands(brandsResponse.data.brands || brandsResponse.data);
+                // console.log("Fetched categories:", categoriesResponse.data);
+                // console.log("Fetched brands:", brandsResponse.data);    
+            } catch(err) {
+                error("Failed to fetch categories or brands");
+            }
+        }
+        fetchDropdownData();
+    },[])
 
     const handleChange = (e) => {
         setForm({
@@ -89,23 +113,57 @@ export default function AddProduct() {
       />
 
         <div className="form-row">
-            <input
+            {/* Brand Dropdown Select Element */}
+            <select
+               name="brand"
+                value={form.brand}
+                onChange={handleChange}
+                className="form-field"
+                required
+            >
+                <option value="" disabled>Select Brand</option>
+                {brands.map((b) => (
+                    // Note: If your Product Schema expects reference IDs, swap b.name with b._id
+                    <option key={b._id} value={b.name}>
+                        {b.name}
+                    </option>
+                ))}
+            </select>
+
+            {/* <input
             name="brand"
             value={form.brand}
             placeholder="Brand"
             onChange={handleChange}
             className="form-field"
             required
-            />
+            /> */}
 
-            <input
+            {/* Category Dropdown Select Element */}
+            <select
+                name="category"
+                value={form.category}
+                onChange={handleChange}
+                className="form-field"
+                required
+            >
+                <option value="" disabled>Select Category</option>
+                {categories.map((c) => (
+                    // Note: If your Product Schema expects reference IDs, swap c.name with c._id
+                    <option key={c._id} value={c.name}>
+                        {c.name}
+                    </option>
+                ))}
+            </select>
+
+            {/* <input
             name="category"
             value={form.category}
             placeholder="Category"
             onChange={handleChange}
             className="form-field"
             required
-            />
+            /> */}
         </div>
 
         <div className="form-row">

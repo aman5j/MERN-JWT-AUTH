@@ -180,14 +180,20 @@ function App() {
       children: [
         {
           index: true,
+          // element: (
+          //   <PrivateRoute>
+          //     <Dashboard />
+          //   </PrivateRoute>
+          // )
           element: (
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
+            // <PrivateRoute>
+              <ProductsPage />
+            // {/* </PrivateRoute> */}
           )
         },
-        { path: "products", element: <Products /> },
-        { path: "productspage", element: <ProductsPage /> },
+        // { path: "products", element: <Products /> },
+        // { path: "productspage", element: <ProductsPage /> },
+        { path: "products", element: <ProductsPage /> },
         { path: "products/:id", element: <ProductDetails /> },
         { path: "cart", element: <CartPage /> }
       ]

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById, updateProducts } from '../../api/productApi';
 import { success, error } from '../../utils/toast';
+import { getAllCategories } from '../../api/categoryApi'
+import { getAllBrands } from '../../api/brandApi'
+
 import './EditProduct.css';
 
 export default function EditProduct() {
@@ -18,6 +21,28 @@ export default function EditProduct() {
     stock: "",
     rating: "" // ADDED: rating state field
   });
+
+  // State arrays to house drop-down records from the database
+  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
+
+   // Fetch drop-down collections from the database on component load
+      useEffect(() => {
+          const fetchDropdownData = async () => {
+              try {
+                  const categoriesResponse = await getAllCategories();    
+                  const brandsResponse = await getAllBrands();
+                  setCategories(categoriesResponse.data.categories || categoriesResponse.data);
+                  setBrands(brandsResponse.data.brands || brandsResponse.data);
+                  // console.log("Fetched categories:", categoriesResponse.data);
+                  // console.log("Fetched brands:", brandsResponse.data);    
+              } catch(err) {
+                  error("Failed to fetch categories or brands");
+              }
+          }
+          fetchDropdownData();
+      },[])
+
 
   // NEW: State to store and display existing images already saved on the server
   const [existingImages, setExistingImages] = useState([]);
@@ -118,24 +143,52 @@ export default function EditProduct() {
         <div className="form-row">
           <div className="input-group flex-1">
             <label className="input-label">Brand</label>
-            <input
+            <select
               name="brand"
               value={form.brand}
               onChange={handleChange}
               className="form-field"
               required
-            />
+            >
+              <option value="" disabled>Select Brand</option>
+              {brands.map((b) => (
+                <option key={b._id} value={b.name}>
+                  {b.name}
+                </option>
+              ))}
+            </select>
+            {/* <input
+              name="brand"
+              value={form.brand}
+              onChange={handleChange}
+              className="form-field"
+              required
+            /> */}
           </div>
 
           <div className="input-group flex-1">
             <label className="input-label">Category</label>
-            <input
+            <select
               name="category"
               value={form.category}
               onChange={handleChange}
               className="form-field"
               required
-            />
+            >
+              <option value="" disabled>Select Category</option>
+              {categories.map((c) => (
+                <option key={c._id} value={c.name}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+            {/* <input
+              name="category"
+              value={form.category}
+              onChange={handleChange}
+              className="form-field"
+              required
+            /> */}
           </div>
         </div>
 

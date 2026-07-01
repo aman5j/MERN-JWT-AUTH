@@ -14,14 +14,20 @@ export default function Navbar() {
   return (
     <>
     <nav className='navbar'>
+      <Link to="/" className="nav-link">
         <h1 className='navbar-logo'>
             MERN Store
         </h1>
+      </Link>
+
+        {/* <h1 className='navbar-logo'>
+            MERN Store
+        </h1> */}
 
         <div className='navbar-links'>
-            <Link to="/" className="nav-link">
+            {/* <Link to="/" className="nav-link">
                 Home
-            </Link>
+            </Link> */}
 
             <Link to="/products" className="nav-link">
                 Products

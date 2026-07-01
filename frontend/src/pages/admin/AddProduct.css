@@ -144,3 +144,50 @@
     gap: 1.25rem;
   }
 }
+
+
+
+
+
+
+/* ==========================================================================
+   Dropdown Select Customization
+   ========================================================================== */
+select.form-field {
+  cursor: pointer;
+  background-color: #f9fafb; /* Matches your default input background */
+  
+  /* Custom chevron arrow matching your theme */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  
+  /* Native reset */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Ensure padding matches your text inputs */
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 2.5rem; 
+}
+
+/* Hover state to match inputs */
+select.form-field:hover {
+  background-color: #ffffff;
+}
+
+/* Placeholder color styling */
+select.form-field option:first-child {
+  color: #6b7280;
+}
+
+/* Dropdown focus state aligned with your #2563eb theme */
+select.form-field:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
